@@ -155,6 +155,26 @@
   color: white;
             margin: 0.5rem 0 0 0 ;
         }
+
+        @media screen and (max-width:678px){
+            body{
+                background-color: aqua;
+            }
+
+            .players-info{
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .player1, .player2{
+                width: 95%;
+                margin: auto;
+            }
+
+            .player2{
+                margin-top: 1rem;
+            }
+        }
     </style>
 
     <script defer src="tic.js"></script>
