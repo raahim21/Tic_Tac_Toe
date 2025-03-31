@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .grid{      
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 25rem;
+            background-color: aliceblue;
+            border: 10px solid black;
+            height: 25rem;
+            margin: 1rem auto;
+
+        
+        }
+
+        *{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+
+        body{
+            margin: 0;
+            background: linear-gradient(90deg, grey, rgb(53, 50, 50));
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #main-h1{
+            font-size: 40px;
+            text-transform: capitalize;
+        }
+        #title{
+            font-size: large;
+        }
+
+        .grid-item{
+            border: 5px solid black;
+        
+        }
+
+        .grid-item:hover{
+            cursor: pointer;
+            background-color: rgb(222, 209, 209);
+        }
+        .grid-item:nth-of-type(1), .grid-item:nth-of-type(2), .grid-item:nth-of-type(3){
+            border-top: 0;
+            
+        }
+
+        .grid-item:nth-of-type(1), .grid-item:nth-of-type(4), .grid-item:nth-of-type(7){
+            border-left: 0;
+        }
+
+        .grid-item:nth-of-type(3), .grid-item:nth-of-type(6), .grid-item:nth-of-type(9){
+            border-right: 0;
+        }
+        .grid-item:nth-of-type(7), .grid-item:nth-of-type(8), .grid-item:nth-of-type(9){
+            border-bottom: 0;
+        }
+
+        #info{
+            box-shadow: 2px 6px 10px;
+            width: 100%;
+            /* color: white; */
+            text-align: center;
+            /* color: white; */
+            background-color: rgb(209, 69, 209);
+        }
+
+
+        .grid-item-placeholder{
+            font-size: 6.5rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .players-info{
+            display: flex;
+            margin: 2rem 0;
+        }
+        #main-h1, #title{
+            color: white;
+        }
+
+        input{
+            box-sizing: border-box;
+  width: 90%;
+  margin: auto;
+  height: 2rem;
+        }
+
+        .player1, .player2{
+            text-align: center;
+            width: 16rem;
+            background: linear-gradient(45deg, rgb(207, 157, 216), rgb(149, 19, 172));
+            margin-right: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 2px 9px;
+        }
+        label{
+            font-size: 40px;
+            font-weight: 900;
+            color: white;
+            padding: 0.5rem;
+        }
+        input:focus{
+            background-color: rgb(226, 193, 226);
+        }
+        .players-info label,input{
+            display: block;
+
+        }
+
+        .name-btn{
+            display: inline-block;
+            width: 92%;
+            border: 2px solid white;
+            background-color: orange;
+            margin: 1rem 0 1rem 0;
+            box-sizing: border-box;
+            padding: 0.5rem 1rem;
+        }
+        button:hover{
+            color: white;
+            background-color: rgb(163, 106, 0);
+        }
+        #Main-results{
+            display: none;
+
+        }
+
+        #results {
+            margin: 0;
+        }
+
+        .p-again{
+            margin: 0;
+        }
+
+        #Main-results{
+            text-align: center;
+        }
+        .NameHolder{
+            font-size: 4rem;
+  font-weight: 800;
+  color: white;
+            margin: 0.5rem 0 0 0 ;
+        }
+    </style>
+
+    <script defer src="tic.js"></script>
+</head>
+<body>
+    <div id="info">
+        <h1 id="main-h1">Tic Tac Toe</h1>
+        <p id="title">Play with your friends</p>
+    </div>
+    <div class="players-info">
+        <div class="player1">
+            <div>
+                <label for="p1">Player 1</label>
+            <input class="name-holding" type="text" name="p1">
+            </div>
+        <h1 class="NameHolder">P1</h1>
+
+            <button class="name-btn">Change Name</button>
+        </div>
+
+        <div class="player2">
+            <div>
+            <label for="p2">Player 2</label>
+            <input type="text" name="p2" class="name-holding">
+        </div>
+        <h1 class="NameHolder">P2</h1>
+            <button class="name-btn">Change Name</button>
+        
+
+        </div>
+    </div>
+    <div id="Main-results">
+        <h1 id="results"></h1>
+        <button class="name-btn p-again">Play Again!</button>
+    </div>
+    <div class="grid">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+
+        <div class="grid-item"></div>
+    </div>
+
+    
+
+</body>
+</html>
